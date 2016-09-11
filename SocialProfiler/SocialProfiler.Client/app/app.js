@@ -1,5 +1,5 @@
 ﻿var app = angular.module('app',
-['ui.router', 'LocalStorageModule', 'angular-loading-bar', 'ui.bootstrap', 'ngSanitize', 'angularSpinner']);
+['ui.router', 'LocalStorageModule', 'angular-loading-bar', 'ui.bootstrap', 'ngSanitize', 'angularSpinner', 'rzModule']);
 
 
 //Custom Filters
