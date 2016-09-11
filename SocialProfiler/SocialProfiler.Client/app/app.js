@@ -1,6 +1,19 @@
 ﻿var app = angular.module('app',
-['ui.router', 'LocalStorageModule', 'angular-loading-bar', 'ui.bootstrap', 'ngSanitize', 'angularSpinner', 'rzModule']);
-
+    [
+        'ui.router', 'LocalStorageModule', 'angular-loading-bar', 'ui.bootstrap', 'ngSanitize', 'angularSpinner',
+        'rzModule', '720kb.tooltips'
+    ])
+    .config([
+        'tooltipsConfProvider', function configConf(tooltipsConfProvider) {
+            tooltipsConfProvider.configure({
+                'smart': true,
+                'size': 'large',
+                'speed': 'fast',
+                'tooltipTemplateUrlCache': true
+                //etc...
+            });
+        }
+    ]);
 
 //Custom Filters
 app.filter('timezone', function () {
