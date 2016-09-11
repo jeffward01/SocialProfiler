@@ -9,11 +9,31 @@ app.controller('homeController',
         $scope.conscientiousnessViewAll = false;
         $scope.introVersionExtroViewAll = false;
         $scope.aggreeabilitynessViewAll = false;
+        $scope.expandConsumerNeeds = false;
 
+        $scope.toggleConsumerNeeds = function() {
+            $scope.expandConsumerNeeds = !$scope.expandConsumerNeeds;
+        }
         $scope.teggleEmotionalRange = function () {
             $scope.emotionalRangeViewAll = !$scope.emotionalRangeViewAll;
         }
        
+        $scope.toggleOpenness = function() {
+            $scope.opennessViewAll = !$scope.opennessViewAll;
+        }
+
+        $scope.toggleConscientiousness = function() {
+            $scope.conscientiousnessViewAll = !$scope.conscientiousnessViewAll;
+        }
+
+        $scope.toggleIntroExtra = function() {
+            $scope.introVersionExtroViewAll = !$scope.introVersionExtroViewAll;
+        }
+
+        $scope.toggleAgreeability = function() {
+            $scope.aggreeabilitynessViewAll = !$scope.aggreeabilitynessViewAll;
+        }
+
         $scope.emotionalRange = {
             value: 80,
             options: {
