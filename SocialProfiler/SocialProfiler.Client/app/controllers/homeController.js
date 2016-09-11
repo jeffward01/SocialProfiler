@@ -97,6 +97,456 @@ app.controller('homeController',
             }
         };
 
+        //Openness
+        $scope.openness = {
+            value: 70,
+            options: {
+                floor: 0,
+                ceil: 100,
+                readOnly: true
+            }
+        };
+
+
+        $scope.Intellect = {
+            value: 70,
+            options: {
+                floor: 0,
+                ceil: 100,
+                readOnly: true
+            }
+        };
+
+
+        $scope.Authority = {
+            value: 70,
+            options: {
+                floor: 0,
+                ceil: 100,
+                readOnly: true
+            }
+        };
+
+
+        $scope.Adventurousness = {
+            value: 70,
+            options: {
+                floor: 0,
+                ceil: 100,
+                readOnly: true
+            }
+        };
+
+
+        $scope.Artistic = {
+            value: 70,
+            options: {
+                floor: 0,
+                ceil: 100,
+                readOnly: true
+            }
+        };
+
+
+        $scope.Emotianlity = {
+            value: 70,
+            options: {
+                floor: 0,
+                ceil: 100,
+                readOnly: true
+            }
+        };
+
+
+        $scope.Imagination = {
+            value: 70,
+            options: {
+                floor: 0,
+                ceil: 100,
+                readOnly: true
+            }
+        };
+
+        //Conscientiousness
+        $scope.Conscientiousness = {
+            value: 70,
+            options: {
+                floor: 0,
+                ceil: 100,
+                readOnly: true
+            }
+        };
+
+
+        $scope.Cautiousness = {
+            value: 70,
+            options: {
+                floor: 0,
+                ceil: 100,
+                readOnly: true
+            }
+        };
+
+
+        $scope.Effiacy = {
+            value: 70,
+            options: {
+                floor: 0,
+                ceil: 100,
+                readOnly: true
+            }
+        };
+
+
+        $scope.Achievement = {
+            value: 70,
+            options: {
+                floor: 0,
+                ceil: 100,
+                readOnly: true
+            }
+        };
+
+
+        $scope.Discipline = {
+            value: 70,
+            options: {
+                floor: 0,
+                ceil: 100,
+                readOnly: true
+            }
+        };
+
+
+        $scope.Dutifulness = {
+            value: 70,
+            options: {
+                floor: 0,
+                ceil: 100,
+                readOnly: true
+            }
+        };
+
+
+        $scope.Orderliness = {
+            value: 70,
+            options: {
+                floor: 0,
+                ceil: 100,
+                readOnly: true
+            }
+        };
+
+        //Introversion/Extraversion
+        $scope.InTraExtraversion = {
+            value: 70,
+            options: {
+                floor: 0,
+                ceil: 100,
+                readOnly: true
+            }
+        };
+
+
+        $scope.Assertivness = {
+            value: 70,
+            options: {
+                floor: 0,
+                ceil: 100,
+                readOnly: true
+            }
+        };
+
+
+        $scope.Activity = {
+            value: 70,
+            options: {
+                floor: 0,
+                ceil: 100,
+                readOnly: true
+            }
+        };
+
+
+        $scope.Outgoing = {
+            value: 70,
+            options: {
+                floor: 0,
+                ceil: 100,
+                readOnly: true
+            }
+        };
+
+
+        $scope.Gregariousness = {
+            value: 70,
+            options: {
+                floor: 0,
+                ceil: 100,
+                readOnly: true
+            }
+        };
+
+
+        $scope.Cherrfulness = {
+            value: 70,
+            options: {
+                floor: 0,
+                ceil: 100,
+                readOnly: true
+            }
+        };
+
+
+        $scope.Excitment = {
+            value: 70,
+            options: {
+                floor: 0,
+                ceil: 100,
+                readOnly: true
+            }
+        };
+
+        //Agreeableness
+        $scope.Agreeableness = {
+            value: 70,
+            options: {
+                floor: 0,
+                ceil: 100,
+                readOnly: true
+            }
+        };
+
+
+        $scope.Sympathy = {
+            value: 70,
+            options: {
+                floor: 0,
+                ceil: 100,
+                readOnly: true
+            }
+        };
+
+
+        $scope.Uncompromising = {
+            value: 70,
+            options: {
+                floor: 0,
+                ceil: 100,
+                readOnly: true
+            }
+        };
+
+
+        $scope.Altruism = {
+            value: 70,
+            options: {
+                floor: 0,
+                ceil: 100,
+                readOnly: true
+            }
+        };
+
+
+        $scope.Cooperation = {
+            value: 70,
+            options: {
+                floor: 0,
+                ceil: 100,
+                readOnly: true
+            }
+        };
+
+
+        $scope.Trust = {
+            value: 70,
+            options: {
+                floor: 0,
+                ceil: 100,
+                readOnly: true
+            }
+        };
+
+
+        $scope.Modesty = {
+            value: 70,
+            options: {
+                floor: 0,
+                ceil: 100,
+                readOnly: true
+            }
+        };
+
+
+        //Consumer needs
+        $scope.Structure = {
+            value: 70,
+            options: {
+                floor: 0,
+                ceil: 100,
+                readOnly: true
+            }
+        };
+
+
+        $scope.Curosity = {
+            value: 70,
+            options: {
+                floor: 0,
+                ceil: 100,
+                readOnly: true
+            }
+        };
+
+
+        $scope.Challenge = {
+            value: 70,
+            options: {
+                floor: 0,
+                ceil: 100,
+                readOnly: true
+            }
+        };
+
+
+        $scope.Practicality = {
+            value: 70,
+            options: {
+                floor: 0,
+                ceil: 100,
+                readOnly: true
+            }
+        };
+
+
+        $scope.Stability = {
+            value: 70,
+            options: {
+                floor: 0,
+                ceil: 100,
+                readOnly: true
+            }
+        };
+
+
+        $scope.Ideal = {
+            value: 70,
+            options: {
+                floor: 0,
+                ceil: 100,
+                readOnly: true
+            }
+        };
+
+
+        $scope.Excitement = {
+            value: 70,
+            options: {
+                floor: 0,
+                ceil: 100,
+                readOnly: true
+            }
+        };
+
+        $scope.Liberty = {
+            value: 70,
+            options: {
+                floor: 0,
+                ceil: 100,
+                readOnly: true
+            }
+        };
+
+
+        $scope.Closeness = {
+            value: 70,
+            options: {
+                floor: 0,
+                ceil: 100,
+                readOnly: true
+            }
+        };
+
+
+        $scope.Harmony = {
+            value: 70,
+            options: {
+                floor: 0,
+                ceil: 100,
+                readOnly: true
+            }
+        };
+
+
+        $scope.Love = {
+            value: 70,
+            options: {
+                floor: 0,
+                ceil: 100,
+                readOnly: true
+            }
+        };
+
+
+        $scope.SelfExpression = {
+            value: 70,
+            options: {
+                floor: 0,
+                ceil: 100,
+                readOnly: true
+            }
+        };
+
+        //Values
+        $scope.Stimulation = {
+            value: 70,
+            options: {
+                floor: 0,
+                ceil: 100,
+                readOnly: true
+            }
+        };
+
+
+        $scope.Tradition = {
+            value: 70,
+            options: {
+                floor: 0,
+                ceil: 100,
+                readOnly: true
+            }
+        };
+
+
+        $scope.Helping = {
+            value: 70,
+            options: {
+                floor: 0,
+                ceil: 100,
+                readOnly: true
+            }
+        };
+
+
+        $scope.Pleasurelife = {
+            value: 70,
+            options: {
+                floor: 0,
+                ceil: 100,
+                readOnly: true
+            }
+        };
+
+
+        $scope.Achievement = {
+            value: 70,
+            options: {
+                floor: 0,
+                ceil: 100,
+                readOnly: true
+            }
+        };
+
 
 
         //Descriptions
