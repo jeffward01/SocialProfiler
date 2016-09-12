@@ -163,6 +163,7 @@
            toastrServiceFactory.info = toastInfo;
            toastrServiceFactory.warning = toastWarning;
            toastrServiceFactory.error = toastError;
+           
 
 
            return toastrServiceFactory;

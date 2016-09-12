@@ -15,9 +15,9 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li style="padding-left: 55px;" class="active"><a href="#">Home</a></li>
-                    <li style="padding-left: 55px"><a href="#">About</a></li>
-                    <li style="padding-left: 55px"><a href="#">Contact</a></li>
+                    <li style="padding-left: 55px;" class="active"><a >Home</a></li>
+                    <li style="padding-left: 55px"><a ui-sref="About">About</a></li>
+                    <li style="padding-left: 55px"><a ui-sref="Contact">Contact</a></li>
 
                     <!--<li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
@@ -68,7 +68,7 @@
             <ul class="nav nav-tabs" role="tablist">
                 <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Facebook</a></li>
                 <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Twitter</a></li>
-                <li role="presentation"><a href="#custom" aria-controls="custom" role="tab" data-toggle="tab">Custom</a></li>
+                <li role="presentation"><a href="#custom" aria-controls="custom" role="tab" data-toggle="tab">Custom Text</a></li>
             </ul>
 
             <!-- Tab panes -->
@@ -93,20 +93,19 @@
                         </div>
                     </div>
                     <div class="col-lg-12" style="padding-bottom: 20px">
-
-                        <button type="button" class="btn btn-danger active">2012 Debate - Barack Obama (EN)</button>
-                        <button type="button" class="btn btn-info">Michikusa - Natsume (JA)</button>
-                        <button type="button" class="btn btn-warning">Reflection - Gandhi (EN)</button>
-                        <button type="button" class="btn btn-success">Your Own Text</button>
+                        <button type="button" ng-click="toggleObamaText()" class="btn btn-danger active">2012 Debate - Barack Obama (EN)</button>
+                        <button type="button" ng-click="toggleMichText()" class="btn btn-info">Michikusa - Natsume (JA)</button>
+                        <button type="button" ng-click="toggleGandhiText()" class="btn btn-warning">Reflection - Gandhi (EN)</button>
+                        <button type="button" ng-click="toggleCustomText()" class="btn btn-success">Your Own Text (EN)</button>
                     </div>
                     <div class="col-lg-12">
                         <div>
-                            <textarea class="form-control" rows="15" id="inputText" placeholder="Please enter text to analyze here (minimum 100 words)..."></textarea>
+                            <textarea style="resize:none"  class="form-control" rows="15" ng-model="inputText" id="inputText" placeholder="Please enter text to analyze here (minimum 100 words)..."></textarea>
                         </div>
                     </div>
                     <div class="col-lg-12" style="padding-top: 20px">
                         <div class="pull-right">
-                            <button type="button" class="btn btn-primary">Analyze</button>
+                            <button type="button" class="btn btn-primary" ng-click="analyze(inputText)">Analyze</button>
                         </div>
                     </div>
                 </div>
@@ -119,14 +118,14 @@
         <h2 style="padding-left: 100px">Results:</h2>
         <div class="col-lg-12">
             <div class="sp-center">
-                <h5><em>The scores you see are all percentiles. They are comparing one person to a broader population. For example, a 90% on Extraversion does not mean that the person is 90% extroverted. It means that for that single trait, the person is more extroverted than 90% of the people in the population.</em></h5>
+                <h5 style="font-size: 1.1em"><em>The scores you see are all percentiles. They are comparing one person to a broader population. For example, a 90% on Extraversion does not mean that the person is 90% extroverted. It means that for that single trait, the person is more extroverted than 90% of the people in the population.</em></h5>
             </div>
             <div style="max-width: 75%;">
-                <h2 style="padding-left: 100px">Personality Portrait</h2>
+                <h2 style="padding-left: 100px;text-decoration: underline">Personality Portrait</h2>
                 <h3 style="padding-left: 100px">7020 words analyzed:&nbsp;<span>Very Strong Analysis</span></h3>
             </div>
         </div>
-        <div class="col-lg-12">
+        <div class="col-lg-12" style="padding-top: 20px">
             <div style="max-width: 75%;" class="sp-center">
 
                 <div class="panel panel-default">
@@ -135,412 +134,416 @@
                             <strong>Summary</strong>
                         </h3>
                     </div>
-                    <div class="panel-body">
-                        <div class="col-lg-6">
-                            <h5>
-                                <strong>
-                                    General Description:
-                                </strong>
-                            </h5>
-                            <p>
-                                Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC,
-                                making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one
-                                of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical
-                                literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum"
-                                (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance.
-                                The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
-                            </p>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="col-md-6">
-                                <ul style="list-style: none">
-                                    <li>
-                                        <h4><strong>You are likely to______</strong></h4>
-                                    </li>
-                                    <li>
-                                        <h4><a data-toggle="collapse" href="#likely1"><span><span class="fa fa-check-circle-o">&nbsp;&nbsp;Option 1</span></span></a></h4>
-                                        <div id="likely1" class="panel-collapse collapse">
-                                            <div class="panel-body">
-                                                Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum"
-                                                (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance.
-                                                The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <h4><a data-toggle="collapse" href="#likely2"><span><span class="fa fa-check-circle-o">&nbsp;&nbsp;Option 1</span></span></a></h4>
-                                        <div id="likely2" class="panel-collapse collapse">
-                                            <div class="panel-body">
-                                                Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum"
-                                                (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance.
-                                                The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <h4><a data-toggle="collapse" href="#likely3"><span><span class="fa fa-check-circle-o">&nbsp;&nbsp;Option 1</span></span></a></h4>
-                                        <div id="likely3" class="panel-collapse collapse">
-                                            <div class="panel-body">
-                                                Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum"
-                                                (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance.
-                                                The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="col-md-6">
-                                <ul style="list-style: none">
-                                    <li>
-                                        <h4><strong>You are unlikely to______</strong></h4>
-                                    </li>
-                                    <li>
-                                        <h4><a data-toggle="collapse" href="#unlikely1"><span><span class="fa fa-times-circle-o">&nbsp;&nbsp;Option 1</span></span></a></h4>
-                                        <div id="unlikely1" class="panel-collapse collapse">
-                                            <div class="panel-body">
-                                                Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum"
-                                                (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance.
-                                                The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <h4><a data-toggle="collapse" href="#unlikely2"><span><span class="fa fa-times-circle-o">&nbsp;&nbsp;Option 1</span></span></a></h4>
-                                        <div id="unlikely2" class="panel-collapse collapse">
-                                            <div class="panel-body">
-                                                Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum"
-                                                (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance.
-                                                The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <h4><a data-toggle="collapse" href="#unlikely3"><span><span class="fa fa-times-circle-o">&nbsp;&nbsp;Option 1</span></span></a></h4>
-                                        <div id="unlikely3" class="panel-collapse collapse">
-                                            <div class="panel-body">
-                                                Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum"
-                                                (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance.
-                                                The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-
-
-
-                        </div>
-                        <hr />
-
-                        <div class="container-fixed" style="margin-top: 50px">
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <div class="row">
-                                        <p class="pull-right" style="color: steelblue; text-decoration: underline; margin-right: 20px">
-                                            <strong>*% = percentile</strong>
-                                        </p>
-                                    </div>
-                                    <div class="col-lg-4 col-xs-4 col-md-4">
-                                        <div>
-                                            <h3>Personality</h3>
-                                            <div>
-                                                <!--Emotional Range _START_-->
-                                                <h5 class="pull-left" ><a ng-click="teggleEmotionalRange()" tooltips tooltip-template="{{EmotionalRangeDescription}}" >Emotional Range&nbsp;&nbsp;<span ng-hide="emotionalRangeViewAll" class="fa fa-angle-down"></span><span ng-show="emotionalRangeViewAll" class="fa fa-angle-up"></span></a></h5>
-
-                                                <rzslider rz-slider-model="emotionalRange.value"
-                                                          rz-slider-options="emotionalRange.options">
-                                                </rzslider>
-                                                <div ng-show="emotionalRangeViewAll">
-                                                    <h5 class="pull-left" style="padding-left: 20px"><span tooltips tooltip-template="{{MelancholyDescription}}" >Melancholy</span></h5>
-                                                    <rzslider rz-slider-model="melancholy.value"
-                                                              rz-slider-options="melancholy.options">
-                                                    </rzslider>
-
-                                                    <h5 class="pull-left" style="padding-left: 20px"><span tooltips tooltip-template="{{ImpulsivnessDescription}}">Impulsiveness</span></h5>
-                                                    <rzslider rz-slider-model="impulsiveness.value"
-                                                              rz-slider-options="impulsiveness.options">
-                                                    </rzslider>
-
-                                                    <h5 class="pull-left" style="padding-left: 20px"><span tooltips tooltip-template="{{SelfConsciousnessDescription}}">Self-consciousness</span></h5>
-                                                    <rzslider rz-slider-model="selfConsciousness.value"
-                                                              rz-slider-options="selfConsciousness.options">
-                                                    </rzslider>
-
-                                                    <h5 class="pull-left" style="padding-left: 20px"><span tooltips tooltip-template="{{StressDescription}}">Susceptible to stress</span></h5>
-                                                    <rzslider rz-slider-model="stress.value"
-                                                              rz-slider-options="stress.options">
-                                                    </rzslider>
-                                                    <h5 class="pull-left" style="padding-left: 20px"><span tooltips tooltip-template="{{FieryDescription}}">Fiery</span></h5>
-                                                    <rzslider rz-slider-model="Fiery.value"
-                                                              rz-slider-options="Fiery.options">
-                                                    </rzslider>
-                                                    <h5 class="pull-left" style="padding-left: 20px"><span tooltips tooltip-template="{{WorryDescription}}">Prone to worry</span></h5>
-                                                    <rzslider rz-slider-model="worry.value"
-                                                              rz-slider-options="worry.options">
-                                                    </rzslider>
-                                                </div>
-                                            </div> <!--Emotional Range _END_-->
-                                            <div>
-                                                <!--Openness _START_-->
-                                                <h5 class="pull-left"><a ng-click="toggleOpenness()" tooltips tooltip-template="{{opennessDescription}}">Openness&nbsp;&nbsp;<span ng-hide="opennessViewAll" class="fa fa-angle-down"></span><span ng-show="opennessViewAll" class="fa fa-angle-up"></span></a></h5>
-
-                                                <rzslider rz-slider-model="openness.value"
-                                                          rz-slider-options="openness.options">
-                                                </rzslider>
-                                                <div ng-show="opennessViewAll">
-                                                    <h5 class="pull-left" style="padding-left: 20px"><span tooltips tooltip-template="{{intellectDescription}}">Intellect</span></h5>
-                                                    <rzslider rz-slider-model="Intellect.value"
-                                                              rz-slider-options="Intellect.options">
-                                                    </rzslider>
-
-                                                    <h5 class="pull-left" style="padding-left: 20px"><span tooltips tooltip-template="{{AuthorityDescription}}">Authority-Challenging</span></h5>
-                                                    <rzslider rz-slider-model="Authority.value"
-                                                              rz-slider-options="Authority.options">
-                                                    </rzslider>
-
-                                                    <h5 class="pull-left" style="padding-left: 20px"><span tooltips tooltip-template="{{AdventousnessDescription}}">Adventurousness</span></h5>
-                                                    <rzslider rz-slider-model="Adventurousness.value"
-                                                              rz-slider-options="Adventurousness.options">
-                                                    </rzslider>
-
-                                                    <h5 class="pull-left" style="padding-left: 20px"><span tooltips tooltip-template="{{ArtisticInterests}}">Artistic Interests</span></h5>
-                                                    <rzslider rz-slider-model="Artistic.value"
-                                                              rz-slider-options="Artistic.options">
-                                                    </rzslider>
-                                                    <h5 class="pull-left" style="padding-left: 20px"><span tooltips tooltip-template="{{EmotionalDescription}}">Emotianlity</span></h5>
-                                                    <rzslider rz-slider-model="Emotianlity.value"
-                                                              rz-slider-options="Emotianlity.options">
-                                                    </rzslider>
-                                                    <h5 class="pull-left" style="padding-left: 20px"><span tooltips tooltip-template="{{imaginagationDescription}}">Imagination</span></h5>
-                                                    <rzslider rz-slider-model="Imagination.value"
-                                                              rz-slider-options="Imagination.options">
-                                                    </rzslider>
-                                                </div>
-                                            </div> <!--Openness _END_ -->
-                                            <div>
-                                                <!--Conscientiousness _START_-->
-                                                <h5 class="pull-left"><a ng-click="toggleConscientiousness()" tooltips tooltip-template="{{ConscientousnessDescription}}">Conscientiousness&nbsp;&nbsp;<span ng-hide="conscientiousnessViewAll" class="fa fa-angle-down"></span><span ng-show="conscientiousnessViewAll" class="fa fa-angle-up"></span></a></h5>
-
-                                                <rzslider rz-slider-model="Conscientiousness.value"
-                                                          rz-slider-options="Conscientiousness.options">
-                                                </rzslider>
-                                                <div ng-show="conscientiousnessViewAll">
-                                                    <h5 class="pull-left" style="padding-left: 20px"><span tooltips tooltip-template="{{cautiousnessDescription}}">Cautiousness</span></h5>
-                                                    <rzslider rz-slider-model="Cautiousness.value"
-                                                              rz-slider-options="Cautiousness.options">
-                                                    </rzslider>
-
-                                                    <h5 class="pull-left" style="padding-left: 20px"><span tooltips tooltip-template="{{selfEfficentyDescription}}">Self-Effiacy</span></h5>
-                                                    <rzslider rz-slider-model="Effiacy.value"
-                                                              rz-slider-options="Effiacy.options">
-                                                    </rzslider>
-
-                                                    <h5 class="pull-left" style="padding-left: 20px"><span tooltips tooltip-template="{{AchievementStrivingDesciption}}">Achievement Striving</span></h5>
-                                                    <rzslider rz-slider-model="Achievement.value"
-                                                              rz-slider-options="Achievement.options">
-                                                    </rzslider>
-
-                                                    <h5 class="pull-left" style="padding-left: 20px"><span tooltips tooltip-template="{{selfDisiplineDescription}}">Self-Discipline</span></h5>
-                                                    <rzslider rz-slider-model="Discipline.value"
-                                                              rz-slider-options="Discipline.options">
-                                                    </rzslider>
-                                                    <h5 class="pull-left" style="padding-left: 20px"><span tooltips tooltip-template="{{dutifullnessDescription}}">Dutifulness</span></h5>
-                                                    <rzslider rz-slider-model="Dutifulness.value"
-                                                              rz-slider-options="Dutifulness.options">
-                                                    </rzslider>
-                                                    <h5 class="pull-left" style="padding-left: 20px"><span tooltips tooltip-template="{{OrderlinessDescription}}">Orderliness</span></h5>
-                                                    <rzslider rz-slider-model="Orderliness.value"
-                                                              rz-slider-options="Orderliness.options">
-                                                    </rzslider>
-                                                </div>
-                                            </div> <!--Conscientiousness _END_ -->
-
-                                            <div>
-                                                <!--Introversion/Extraversion _START_-->
-                                                <h5 class="pull-left"><a ng-click="toggleIntroExtra()" tooltips tooltip-template="{{IntroVersionExtraDescription}}">Introversion/Extraversion&nbsp;&nbsp;<span ng-hide="introVersionExtroViewAll" class="fa fa-angle-down"></span><span ng-show="introVersionExtroViewAll" class="fa fa-angle-up"></span></a></h5>
-
-                                                <rzslider rz-slider-model="InTraExtraversion.value"
-                                                          rz-slider-options="InTraExtraversion.options">
-                                                </rzslider>
-                                                <div ng-show="introVersionExtroViewAll">
-                                                    <h5 class="pull-left" style="padding-left: 20px"><span tooltips tooltip-template="{{AssertivnessDesctiption}}">Assertivness</span></h5>
-                                                    <rzslider rz-slider-model="Assertivness.value"
-                                                              rz-slider-options="Assertivness.options">
-                                                    </rzslider>
-
-                                                    <h5 class="pull-left" style="padding-left: 20px"><span tooltips tooltip-template="{{activityLevleDescription}}">Activity Level</span></h5>
-                                                    <rzslider rz-slider-model="Activity.value"
-                                                              rz-slider-options="Activity.options">
-                                                    </rzslider>
-
-                                                    <h5 class="pull-left" style="padding-left: 20px"><span tooltips tooltip-template="{{outgoingDescription}}">Outgoing</span></h5>
-                                                    <rzslider rz-slider-model="Outgoing.value"
-                                                              rz-slider-options="Outgoing.options">
-                                                    </rzslider>
-
-                                                    <h5 class="pull-left" style="padding-left: 20px"><span tooltips tooltip-template="{{gregiousnessDescription}}">Gregariousness</span></h5>
-                                                    <rzslider rz-slider-model="Gregariousness.value"
-                                                              rz-slider-options="Gregariousness.options">
-                                                    </rzslider>
-                                                    <h5 class="pull-left" style="padding-left: 20px"><span tooltips tooltip-template="{{cheerfullnessDescription}}">Cherrfulness</span></h5>
-                                                    <rzslider rz-slider-model="Cherrfulness.value"
-                                                              rz-slider-options="Cherrfulness.options">
-                                                    </rzslider>
-                                                    <h5 class="pull-left" style="padding-left: 20px"><span tooltips tooltip-template="{{excitmentSeekingDescription}}">Excitment-Seeking</span></h5>
-                                                    <rzslider rz-slider-model="Excitment.value"
-                                                              rz-slider-options="Excitment.options">
-                                                    </rzslider>
-                                                </div>
-                                            </div> <!--Introversion/Extraversion-->
-                                            <div>
-                                                <!--Agreeableness _START_-->
-                                                <h5 class="pull-left"><a ng-click="toggleAgreeability()" tooltips tooltip-template="{{AggreeablenessDescription}}">Agreeableness&nbsp;&nbsp;<span ng-hide="aggreeabilitynessViewAll" class="fa fa-angle-down"></span><span ng-show="aggreeabilitynessViewAll" class="fa fa-angle-up"></span></a></h5>
-
-                                                <rzslider rz-slider-model="Agreeableness.value"
-                                                          rz-slider-options="Agreeableness.options">
-                                                </rzslider>
-                                                <div ng-show="aggreeabilitynessViewAll">
-                                                    <h5 class="pull-left" style="padding-left: 20px"><span tooltips tooltip-template="{{SympathyDescription}}">Sympathy</span></h5>
-                                                    <rzslider rz-slider-model="Sympathy.value"
-                                                              rz-slider-options="Sympathy.options">
-                                                    </rzslider>
-
-                                                    <h5 class="pull-left" style="padding-left: 20px"><span tooltips tooltip-template="{{uncompromisingDescription}}">Uncompromising</span></h5>
-                                                    <rzslider rz-slider-model="Uncompromising.value"
-                                                              rz-slider-options="Uncompromising.options">
-                                                    </rzslider>
-
-                                                    <h5 class="pull-left" style="padding-left: 20px"><span tooltips tooltip-template="{{altruismDescription}}">Altruism</span></h5>
-                                                    <rzslider rz-slider-model="Altruism.value"
-                                                              rz-slider-options="Altruism.options">
-                                                    </rzslider>
-
-                                                    <h5 class="pull-left" style="padding-left: 20px"><span tooltips tooltip-template="{{cooperationDescription}}">Cooperation</span></h5>
-                                                    <rzslider rz-slider-model="Cooperation.value"
-                                                              rz-slider-options="Cooperation.options">
-                                                    </rzslider>
-                                                    <h5 class="pull-left" style="padding-left: 20px"><span tooltips tooltip-template="{{trustDescription}}">Trust</span></h5>
-                                                    <rzslider rz-slider-model="Trust.value"
-                                                              rz-slider-options="Trust.options">
-                                                    </rzslider>
-                                                    <h5 class="pull-left" style="padding-left: 20px"><span tooltips tooltip-template="{{ModestyDescription}}">Modesty</span></h5>
-                                                    <rzslider rz-slider-model="Modesty.value"
-                                                              rz-slider-options="Modesty.options">
-                                                    </rzslider>
-                                                </div>
-                                            </div> <!--Agreeableness _END-->
-                                        </div> <!--Personality End-->
-                                    </div>
-
-                                    <div class="col-lg-4 col-xs-4 col-md-4">
-                                        <h3>Consumer Needs</h3>
-                                        <div>
-                                            <h5 class="pull-left"><span tooltips tooltip-template="{{structureDescription}}">Structure&nbsp;&nbsp;</span></h5>
-
-                                            <rzslider rz-slider-model="Structure.value"
-                                                      rz-slider-options="Structure.options">
-                                            </rzslider>
-                                            <hr />
-                                            <h5 class="pull-left"><span tooltips tooltip-template="{{curosityDescription}}">Curosity&nbsp;&nbsp;</span></h5>
-
-                                            <rzslider rz-slider-model="Curosity.value"
-                                                      rz-slider-options="Curosity.options">
-                                            </rzslider>
-                                            <h5 class="pull-left"><span tooltips tooltip-template="{{challengeDescription}}">Challenge&nbsp;&nbsp;</span></h5>
-
-                                            <rzslider rz-slider-model="Challenge.value"
-                                                      rz-slider-options="Challenge.options">
-                                            </rzslider>
-                                            <h5 class="pull-left"><span tooltips tooltip-template="{{practicalityDescription}}">Practicality&nbsp;&nbsp;</span></h5>
-
-                                            <rzslider rz-slider-model="Practicality.value"
-                                                      rz-slider-options="Practicality.options">
-                                            </rzslider>
-                                            <h5 class="pull-left"><span tooltips tooltip-template="{{StabilityDescription}}">Stability&nbsp;&nbsp;</span></h5>
-
-                                            <rzslider rz-slider-model="Stability.value"
-                                                      rz-slider-options="Stability.options">
-                                            </rzslider>
-                                            <div ng-show="expandConsumerNeeds">
-                                                <h5 class="pull-left"><span tooltips tooltip-template="{{idealDescription}}">Ideal&nbsp;&nbsp;</span></h5>
-
-                                                <rzslider rz-slider-model="Ideal.value"
-                                                          rz-slider-options="Ideal.options">
-                                                </rzslider>
-                                                <h5 class="pull-left"><span tooltips tooltip-template="{{excitmentDescription}}">Excitement&nbsp;&nbsp;</span></h5>
-
-                                                <rzslider rz-slider-model="Excitement.value"
-                                                          rz-slider-options="Excitement.options">
-                                                </rzslider>
-                                                <h5 class="pull-left"><span tooltips tooltip-template="{{libertyDescription}}">Liberty&nbsp;&nbsp;</span></h5>
-
-                                                <rzslider rz-slider-model="Liberty.value"
-                                                          rz-slider-options="Liberty.options">
-                                                </rzslider>
-                                                <h5 class="pull-left"><span tooltips tooltip-template="{{closnessDescription}}">Closeness&nbsp;&nbsp;</span></h5>
-
-                                                <rzslider rz-slider-model="Closeness.value"
-                                                          rz-slider-options="Closeness.options">
-                                                </rzslider>
-                                                <h5 class="pull-left"><span tooltips tooltip-template="{{harmonyDescription}}">Harmony&nbsp;&nbsp;</span></h5>
-
-                                                <rzslider rz-slider-model="Harmony.value"
-                                                          rz-slider-options="Harmony.options">
-                                                </rzslider>
-                                                <h5 class="pull-left"><span tooltips tooltip-template="{{loveDescription}}">Love&nbsp;&nbsp;</span></h5>
-
-                                                <rzslider rz-slider-model="Love.value"
-                                                          rz-slider-options="Love.options">
-                                                </rzslider>
-                                                <h5 class="pull-left"><span tooltips tooltip-template="{{selfExpressionDescription}}">SelfExpression&nbsp;&nbsp;</span></h5>
-
-                                                <rzslider rz-slider-model="SelfExpression.value"
-                                                          rz-slider-options="SelfExpression.options">
-                                                </rzslider>
-                                            </div>
-                                            <p class="pull-right" style="text-decoration: underline" ng-hide="expandConsumerNeeds" ng-click="toggleConsumerNeeds()">
-                                                <a>>></a>
-                                            </p><p class="pull-right" style="text-decoration: underline" ng-show="expandConsumerNeeds" ng-click="toggleConsumerNeeds()">
-                                                <a><<</a>
-                                            </p>
-                                        </div>
-
-
-                                    </div>
-                                    <div class="col-lg-4 col-xs-4 col-md-4">
-                                        <h3>Values</h3>
-                                        <div>
-                                            <h5 class="pull-left"><span tooltips tooltip-template="{{stimulationDescription}}">Stimulation&nbsp;&nbsp;</span></h5>
-
-                                            <rzslider rz-slider-model="Stimulation.value"
-                                                      rz-slider-options="Stimulation.options">
-                                            </rzslider>
-                                            <h5 class="pull-left"><span tooltips tooltip-template="{{traditionDescription}}">Tradition&nbsp;&nbsp;</span></h5>
-
-                                            <rzslider rz-slider-model="Tradition.value"
-                                                      rz-slider-options="Tradition.options">
-                                            </rzslider>
-                                            <h5 class="pull-left"><span tooltips tooltip-template="{{helpingotherDescription}}">Helping Others&nbsp;&nbsp;</span></h5>
-
-                                            <rzslider rz-slider-model="Helping.value"
-                                                      rz-slider-options="Helping.options">
-                                            </rzslider>
-                                            <h5 class="pull-left"><span tooltips tooltip-template="{{pleasureDescription}}">Taking Pleasure in life&nbsp;&nbsp;</span></h5>
-
-                                            <rzslider rz-slider-model="Pleasurelife.value"
-                                                      rz-slider-options="Pleasurelife.options">
-                                            </rzslider>
-                                            <h5 class="pull-left"><span tooltips tooltip-template="{{achievementDescription}}">Achievement&nbsp;&nbsp;</span></h5>
-
-                                            <rzslider rz-slider-model="Achievement.value"
-                                                      rz-slider-options="Achievement.options">
-                                            </rzslider>
-                                        </div>
+                <div class="panel-body">
+                    <!--style="border-right: thick double black"-->
+                <div class="col-lg-6">
+                    <h5>
+                        <strong>
+                            General Description:
+                        </strong>
+                    </h5>
+                    <p>
+                        Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC,
+                        making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one
+                        of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical
+                        literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum"
+                        (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance.
+                        The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+                    </p>
+                </div>
+                <div class="col-lg-6">
+                    <div class="col-md-6">
+                        <ul style="list-style: none">
+                            <li>
+                                <h4><strong>You are likely to______</strong></h4>
+                            </li>
+                            <li>
+                                <h4 style="font-size: 25px"><a data-toggle="collapse" href="#likely1"><span><span class="fa fa-check-circle-o">&nbsp;&nbsp;Option 1</span></span></a></h4>
+                                <div id="likely1" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum"
+                                        (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance.
+                                        The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
                                     </div>
                                 </div>
-                            </div>
-                        </div>
+                            </li>
+                            <li>
+                                <h4 style="font-size: 25px"><a data-toggle="collapse" href="#likely2"><span><span class="fa fa-check-circle-o">&nbsp;&nbsp;Option 1</span></span></a></h4>
+                                <div id="likely2" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum"
+                                        (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance.
+                                        The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <h4 style="font-size: 25px"><a data-toggle="collapse" href="#likely3"><span><span class="fa fa-check-circle-o">&nbsp;&nbsp;Option 1</span></span></a></h4>
+                                <div id="likely3" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum"
+                                        (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance.
+                                        The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
+                    <div class="col-md-6">
+                        <ul style="list-style: none">
+                            <li>
+                                <h4><strong>You are unlikely to______</strong></h4>
+                            </li>
+                            <li>
+                                <h4 style="font-size: 25px"><a data-toggle="collapse" href="#unlikely1"><span><span class="fa fa-times-circle-o">&nbsp;&nbsp;Option 1</span></span></a></h4>
+                                <div id="unlikely1" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum"
+                                        (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance.
+                                        The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <h4 style="font-size: 25px"><a data-toggle="collapse" href="#unlikely2"><span><span class="fa fa-times-circle-o">&nbsp;&nbsp;Option 1</span></span></a></h4>
+                                <div id="unlikely2" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum"
+                                        (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance.
+                                        The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <h4 style="font-size: 25px"><a data-toggle="collapse" href="#unlikely3"><span><span class="fa fa-times-circle-o">&nbsp;&nbsp;Option 1</span></span></a></h4>
+                                <div id="unlikely3" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum"
+                                        (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance.
+                                        The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+
+
+                </div>
+                <hr/>
+
+                <div class="container-fixed" style="margin-top: 50px;">
+                <div class="row">
+                <div class="col-lg-12">
+                <div class="row">
+                    <p class="pull-right" style="color: steelblue; text-decoration: underline; margin-right: 20px">
+                        <strong>*% = percentile</strong>
+                    </p>
+                </div>
+                <div class="col-lg-4 col-xs-4 col-md-4">
+                    <div>
+                        <h3>Personality</h3>
+                        <div>
+                            <!--Emotional Range _START_-->
+                            <h5 class="pull-left"><a ng-click="teggleEmotionalRange()" tooltips tooltip-template="{{EmotionalRangeDescription}}">Emotional Range&nbsp;&nbsp;<span ng-hide="emotionalRangeViewAll" class="fa fa-angle-down"></span><span ng-show="emotionalRangeViewAll" class="fa fa-angle-up"></span></a></h5>
+
+                            <rzslider rz-slider-model="emotionalRange.value"
+                                      rz-slider-options="emotionalRange.options">
+                            </rzslider>
+
+
+                            <div ng-show="emotionalRangeViewAll">
+                                <h5 class="pull-left" style="padding-left: 20px"><span tooltips tooltip-template="{{MelancholyDescription}}" >Melancholy</span></h5>
+                                <rzslider rz-slider-model="melancholy.value"
+                                          rz-slider-options="melancholy.options">
+                                </rzslider>
+
+                                <h5 class="pull-left" style="padding-left: 20px"><span tooltips tooltip-template="{{ImpulsivnessDescription}}">Impulsiveness</span></h5>
+                                <rzslider rz-slider-model="impulsiveness.value"
+                                          rz-slider-options="impulsiveness.options">
+                                </rzslider>
+
+                                <h5 class="pull-left" style="padding-left: 20px"><span tooltips tooltip-template="{{SelfConsciousnessDescription}}">Self-consciousness</span></h5>
+                                <rzslider rz-slider-model="selfConsciousness.value"
+                                          rz-slider-options="selfConsciousness.options">
+                                </rzslider>
+
+                                <h5 class="pull-left" style="padding-left: 20px"><span tooltips tooltip-template="{{StressDescription}}">Susceptible to stress</span></h5>
+                                <rzslider rz-slider-model="stress.value"
+                                          rz-slider-options="stress.options">
+                                </rzslider>
+                                <h5 class="pull-left" style="padding-left: 20px"><span tooltips tooltip-template="{{FieryDescription}}">Fiery</span></h5>
+                                <rzslider rz-slider-model="Fiery.value"
+                                          rz-slider-options="Fiery.options">
+                                </rzslider>
+                                <h5 class="pull-left" style="padding-left: 20px"><span tooltips tooltip-template="{{WorryDescription}}">Prone to worry</span></h5>
+                                <rzslider rz-slider-model="worry.value"
+                                          rz-slider-options="worry.options">
+                                </rzslider>
+                            </div>
+                        </div> <!--Emotional Range _END_-->
+                        <div>
+                            <!--Openness _START_-->
+                            <h5 class="pull-left"><a ng-click="toggleOpenness()" tooltips tooltip-template="{{opennessDescription}}">Openness&nbsp;&nbsp;<span ng-hide="opennessViewAll" class="fa fa-angle-down"></span><span ng-show="opennessViewAll" class="fa fa-angle-up"></span></a></h5>
+
+                            <rzslider rz-slider-model="openness.value"
+                                      rz-slider-options="openness.options">
+                            </rzslider>
+                            <div ng-show="opennessViewAll">
+                                <h5 class="pull-left" style="padding-left: 20px"><span tooltips tooltip-template="{{intellectDescription}}">Intellect</span></h5>
+                                <rzslider rz-slider-model="Intellect.value"
+                                          rz-slider-options="Intellect.options">
+                                </rzslider>
+
+                                <h5 class="pull-left" style="padding-left: 20px"><span tooltips tooltip-template="{{AuthorityDescription}}">Authority-Challenging</span></h5>
+                                <rzslider rz-slider-model="Authority.value"
+                                          rz-slider-options="Authority.options">
+                                </rzslider>
+
+                                <h5 class="pull-left" style="padding-left: 20px"><span tooltips tooltip-template="{{AdventousnessDescription}}">Adventurousness</span></h5>
+                                <rzslider rz-slider-model="Adventurousness.value"
+                                          rz-slider-options="Adventurousness.options">
+                                </rzslider>
+
+                                <h5 class="pull-left" style="padding-left: 20px"><span tooltips tooltip-template="{{ArtisticInterests}}">Artistic Interests</span></h5>
+                                <rzslider rz-slider-model="Artistic.value"
+                                          rz-slider-options="Artistic.options">
+                                </rzslider>
+                                <h5 class="pull-left" style="padding-left: 20px"><span tooltips tooltip-template="{{EmotionalDescription}}">Emotianlity</span></h5>
+                                <rzslider rz-slider-model="Emotianlity.value"
+                                          rz-slider-options="Emotianlity.options">
+                                </rzslider>
+                                <h5 class="pull-left" style="padding-left: 20px"><span tooltips tooltip-template="{{imaginagationDescription}}">Imagination</span></h5>
+                                <rzslider rz-slider-model="Imagination.value"
+                                          rz-slider-options="Imagination.options">
+                                </rzslider>
+                            </div>
+                        </div> <!--Openness _END_ -->
+                        <div>
+                            <!--Conscientiousness _START_-->
+                            <h5 class="pull-left"><a ng-click="toggleConscientiousness()" tooltips tooltip-template="{{ConscientousnessDescription}}">Conscientiousness&nbsp;&nbsp;<span ng-hide="conscientiousnessViewAll" class="fa fa-angle-down"></span><span ng-show="conscientiousnessViewAll" class="fa fa-angle-up"></span></a></h5>
+
+                            <rzslider rz-slider-model="Conscientiousness.value"
+                                      rz-slider-options="Conscientiousness.options">
+                            </rzslider>
+                            <div ng-show="conscientiousnessViewAll">
+                                <h5 class="pull-left" style="padding-left: 20px"><span tooltips tooltip-template="{{cautiousnessDescription}}">Cautiousness</span></h5>
+                                <rzslider rz-slider-model="Cautiousness.value"
+                                          rz-slider-options="Cautiousness.options">
+                                </rzslider>
+
+                                <h5 class="pull-left" style="padding-left: 20px"><span tooltips tooltip-template="{{selfEfficentyDescription}}">Self-Effiacy</span></h5>
+                                <rzslider rz-slider-model="Effiacy.value"
+                                          rz-slider-options="Effiacy.options">
+                                </rzslider>
+
+                                <h5 class="pull-left" style="padding-left: 20px"><span tooltips tooltip-template="{{AchievementStrivingDesciption}}">Achievement Striving</span></h5>
+                                <rzslider rz-slider-model="Achievement.value"
+                                          rz-slider-options="Achievement.options">
+                                </rzslider>
+
+                                <h5 class="pull-left" style="padding-left: 20px"><span tooltips tooltip-template="{{selfDisiplineDescription}}">Self-Discipline</span></h5>
+                                <rzslider rz-slider-model="Discipline.value"
+                                          rz-slider-options="Discipline.options">
+                                </rzslider>
+                                <h5 class="pull-left" style="padding-left: 20px"><span tooltips tooltip-template="{{dutifullnessDescription}}">Dutifulness</span></h5>
+                                <rzslider rz-slider-model="Dutifulness.value"
+                                          rz-slider-options="Dutifulness.options">
+                                </rzslider>
+                                <h5 class="pull-left" style="padding-left: 20px"><span tooltips tooltip-template="{{OrderlinessDescription}}">Orderliness</span></h5>
+                                <rzslider rz-slider-model="Orderliness.value"
+                                          rz-slider-options="Orderliness.options">
+                                </rzslider>
+                            </div>
+                        </div> <!--Conscientiousness _END_ -->
+
+                        <div>
+                            <!--Introversion/Extraversion _START_-->
+                            <h5 class="pull-left"><a ng-click="toggleIntroExtra()" tooltips tooltip-template="{{IntroVersionExtraDescription}}">Introversion/Extraversion&nbsp;&nbsp;<span ng-hide="introVersionExtroViewAll" class="fa fa-angle-down"></span><span ng-show="introVersionExtroViewAll" class="fa fa-angle-up"></span></a></h5>
+
+                            <rzslider rz-slider-model="InTraExtraversion.value"
+                                      rz-slider-options="InTraExtraversion.options">
+                            </rzslider>
+                            <div ng-show="introVersionExtroViewAll">
+                                <h5 class="pull-left" style="padding-left: 20px"><span tooltips tooltip-template="{{AssertivnessDesctiption}}">Assertivness</span></h5>
+                                <rzslider rz-slider-model="Assertivness.value"
+                                          rz-slider-options="Assertivness.options">
+                                </rzslider>
+
+                                <h5 class="pull-left" style="padding-left: 20px"><span tooltips tooltip-template="{{activityLevleDescription}}">Activity Level</span></h5>
+                                <rzslider rz-slider-model="Activity.value"
+                                          rz-slider-options="Activity.options">
+                                </rzslider>
+
+                                <h5 class="pull-left" style="padding-left: 20px"><span tooltips tooltip-template="{{outgoingDescription}}">Outgoing</span></h5>
+                                <rzslider rz-slider-model="Outgoing.value"
+                                          rz-slider-options="Outgoing.options">
+                                </rzslider>
+
+                                <h5 class="pull-left" style="padding-left: 20px"><span tooltips tooltip-template="{{gregiousnessDescription}}">Gregariousness</span></h5>
+                                <rzslider rz-slider-model="Gregariousness.value"
+                                          rz-slider-options="Gregariousness.options">
+                                </rzslider>
+                                <h5 class="pull-left" style="padding-left: 20px"><span tooltips tooltip-template="{{cheerfullnessDescription}}">Cherrfulness</span></h5>
+                                <rzslider rz-slider-model="Cherrfulness.value"
+                                          rz-slider-options="Cherrfulness.options">
+                                </rzslider>
+                                <h5 class="pull-left" style="padding-left: 20px"><span tooltips tooltip-template="{{excitmentSeekingDescription}}">Excitment-Seeking</span></h5>
+                                <rzslider rz-slider-model="Excitment.value"
+                                          rz-slider-options="Excitment.options">
+                                </rzslider>
+                            </div>
+                        </div> <!--Introversion/Extraversion-->
+                        <div>
+                            <!--Agreeableness _START_-->
+                            <h5 class="pull-left"><a ng-click="toggleAgreeability()" tooltips tooltip-template="{{AggreeablenessDescription}}">Agreeableness&nbsp;&nbsp;<span ng-hide="aggreeabilitynessViewAll" class="fa fa-angle-down"></span><span ng-show="aggreeabilitynessViewAll" class="fa fa-angle-up"></span></a></h5>
+
+                            <rzslider rz-slider-model="Agreeableness.value"
+                                      rz-slider-options="Agreeableness.options">
+                            </rzslider>
+                            <div ng-show="aggreeabilitynessViewAll">
+                                <h5 class="pull-left" style="padding-left: 20px"><span tooltips tooltip-template="{{SympathyDescription}}">Sympathy</span></h5>
+                                <rzslider rz-slider-model="Sympathy.value"
+                                          rz-slider-options="Sympathy.options">
+                                </rzslider>
+
+                                <h5 class="pull-left" style="padding-left: 20px"><span tooltips tooltip-template="{{uncompromisingDescription}}">Uncompromising</span></h5>
+                                <rzslider rz-slider-model="Uncompromising.value"
+                                          rz-slider-options="Uncompromising.options">
+                                </rzslider>
+
+                                <h5 class="pull-left" style="padding-left: 20px"><span tooltips tooltip-template="{{altruismDescription}}">Altruism</span></h5>
+                                <rzslider rz-slider-model="Altruism.value"
+                                          rz-slider-options="Altruism.options">
+                                </rzslider>
+
+                                <h5 class="pull-left" style="padding-left: 20px"><span tooltips tooltip-template="{{cooperationDescription}}">Cooperation</span></h5>
+                                <rzslider rz-slider-model="Cooperation.value"
+                                          rz-slider-options="Cooperation.options">
+                                </rzslider>
+                                <h5 class="pull-left" style="padding-left: 20px"><span tooltips tooltip-template="{{trustDescription}}">Trust</span></h5>
+                                <rzslider rz-slider-model="Trust.value"
+                                          rz-slider-options="Trust.options">
+                                </rzslider>
+                                <h5 class="pull-left" style="padding-left: 20px"><span tooltips tooltip-template="{{ModestyDescription}}">Modesty</span></h5>
+                                <rzslider rz-slider-model="Modesty.value"
+                                          rz-slider-options="Modesty.options">
+                                </rzslider>
+                            </div>
+                        </div> <!--Agreeableness _END-->
+                    </div> <!--Personality End-->
+                </div>
+
+                <div class="col-lg-4 col-xs-4 col-md-4">
+                    <h3>Consumer Needs</h3>
+                    <div>
+                        <h5 class="pull-left"><span tooltips tooltip-template="{{structureDescription}}">Structure&nbsp;&nbsp;</span></h5>
+
+                        <rzslider rz-slider-model="Structure.value"
+                                  rz-slider-options="Structure.options">
+                        </rzslider>
+                        <hr/>
+                        <h5 class="pull-left"><span tooltips tooltip-template="{{curosityDescription}}">Curosity&nbsp;&nbsp;</span></h5>
+
+                        <rzslider rz-slider-model="Curosity.value"
+                                  rz-slider-options="Curosity.options">
+                        </rzslider>
+                        <h5 class="pull-left"><span tooltips tooltip-template="{{challengeDescription}}">Challenge&nbsp;&nbsp;</span></h5>
+
+                        <rzslider rz-slider-model="Challenge.value"
+                                  rz-slider-options="Challenge.options">
+                        </rzslider>
+                        <h5 class="pull-left"><span tooltips tooltip-template="{{practicalityDescription}}">Practicality&nbsp;&nbsp;</span></h5>
+
+                        <rzslider rz-slider-model="Practicality.value"
+                                  rz-slider-options="Practicality.options">
+                        </rzslider>
+                        <h5 class="pull-left"><span tooltips tooltip-template="{{StabilityDescription}}">Stability&nbsp;&nbsp;</span></h5>
+
+                        <rzslider rz-slider-model="Stability.value"
+                                  rz-slider-options="Stability.options">
+                        </rzslider>
+                        <div ng-show="expandConsumerNeeds">
+                            <h5 class="pull-left"><span tooltips tooltip-template="{{idealDescription}}">Ideal&nbsp;&nbsp;</span></h5>
+
+                            <rzslider rz-slider-model="Ideal.value"
+                                      rz-slider-options="Ideal.options">
+                            </rzslider>
+                            <h5 class="pull-left"><span tooltips tooltip-template="{{excitmentDescription}}">Excitement&nbsp;&nbsp;</span></h5>
+
+                            <rzslider rz-slider-model="Excitement.value"
+                                      rz-slider-options="Excitement.options">
+                            </rzslider>
+                            <h5 class="pull-left"><span tooltips tooltip-template="{{libertyDescription}}">Liberty&nbsp;&nbsp;</span></h5>
+
+                            <rzslider rz-slider-model="Liberty.value"
+                                      rz-slider-options="Liberty.options">
+                            </rzslider>
+                            <h5 class="pull-left"><span tooltips tooltip-template="{{closnessDescription}}">Closeness&nbsp;&nbsp;</span></h5>
+
+                            <rzslider rz-slider-model="Closeness.value"
+                                      rz-slider-options="Closeness.options">
+                            </rzslider>
+                            <h5 class="pull-left"><span tooltips tooltip-template="{{harmonyDescription}}">Harmony&nbsp;&nbsp;</span></h5>
+
+                            <rzslider rz-slider-model="Harmony.value"
+                                      rz-slider-options="Harmony.options">
+                            </rzslider>
+                            <h5 class="pull-left"><span tooltips tooltip-template="{{loveDescription}}">Love&nbsp;&nbsp;</span></h5>
+
+                            <rzslider rz-slider-model="Love.value"
+                                      rz-slider-options="Love.options">
+                            </rzslider>
+                            <h5 class="pull-left"><span tooltips tooltip-template="{{selfExpressionDescription}}">SelfExpression&nbsp;&nbsp;</span></h5>
+
+                            <rzslider rz-slider-model="SelfExpression.value"
+                                      rz-slider-options="SelfExpression.options">
+                            </rzslider>
+                        </div>
+                        <p class="pull-right" style="text-decoration: underline" ng-hide="expandConsumerNeeds" ng-click="toggleConsumerNeeds()">
+                            <a>>></a>
+                        </p>
+                        <p class="pull-right" style="text-decoration: underline" ng-show="expandConsumerNeeds" ng-click="toggleConsumerNeeds()">
+                            <a><<</a>
+                        </p>
+                    </div>
+
+
+                </div>
+                <div class="col-lg-4 col-xs-4 col-md-4">
+                    <h3>Values</h3>
+                    <div>
+                        <h5 class="pull-left"><span tooltips tooltip-template="{{stimulationDescription}}">Stimulation&nbsp;&nbsp;</span></h5>
+
+                        <rzslider rz-slider-model="Stimulation.value"
+                                  rz-slider-options="Stimulation.options">
+                        </rzslider>
+                        <h5 class="pull-left"><span tooltips tooltip-template="{{traditionDescription}}">Tradition&nbsp;&nbsp;</span></h5>
+
+                        <rzslider rz-slider-model="Tradition.value"
+                                  rz-slider-options="Tradition.options">
+                        </rzslider>
+                        <h5 class="pull-left"><span tooltips tooltip-template="{{helpingotherDescription}}">Helping Others&nbsp;&nbsp;</span></h5>
+
+                        <rzslider rz-slider-model="Helping.value"
+                                  rz-slider-options="Helping.options">
+                        </rzslider>
+                        <h5 class="pull-left"><span tooltips tooltip-template="{{pleasureDescription}}">Taking Pleasure in life&nbsp;&nbsp;</span></h5>
+
+                        <rzslider rz-slider-model="Pleasurelife.value"
+                                  rz-slider-options="Pleasurelife.options">
+                        </rzslider>
+                        <h5 class="pull-left"><span tooltips tooltip-template="{{achievementDescription}}">Achievement&nbsp;&nbsp;</span></h5>
+
+                        <rzslider rz-slider-model="Achievement.value"
+                                  rz-slider-options="Achievement.options">
+                        </rzslider>
+                    </div>
+                </div>
+                </div>
+                </div>
+                </div>
+                </div>
                 </div>
             </div>
         </div>

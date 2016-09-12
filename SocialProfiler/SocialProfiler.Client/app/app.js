@@ -50,7 +50,27 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         }
     });
 
+    $stateProvider.state('About',
+  {
+      url: "/about-us",
+      templateUrl: "app/views/about.html",
+      controller: "aboutController",
+      data:
+      {
+          displayName: "About"
+      }
+  });
 
+    $stateProvider.state('Contact',
+  {
+      url: "/contact-us",
+      templateUrl: "app/views/contact.html",
+      controller: "contactController",
+      data:
+      {
+          displayName: "Contact Us"
+      }
+  });
 
 
 });
