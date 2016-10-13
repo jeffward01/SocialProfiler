@@ -1,7 +1,13 @@
-﻿var app = angular.module('app',
+﻿//require('./controllers');
+//require('./services');
+require('angular-bootstrap/ui-bootstrap-tpls');
+require('angular-spinner/angular-spinner');
+
+
+var app = angular.module('app',
     [
-        'ui.router', 'LocalStorageModule', 'angular-loading-bar', 'ui.bootstrap', 'ngSanitize', 'angularSpinner',
-        'rzModule', '720kb.tooltips'
+        require('angular-ui-router'), require('angular-local-storage'), require('angular-loading-bar'), 'ui.bootstrap', require('angular-sanitize'), 'angularSpinner',
+         require('angular-tooltips')
     ])
     .config([
         'tooltipsConfProvider', function configConf(tooltipsConfProvider) {
@@ -28,6 +34,7 @@ app.filter('timezone', function () {
                         date.getUTCHours(),
                         date.getUTCMinutes(),
                         date.getUTCSeconds());
+        
     };
 });
 
@@ -72,5 +79,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
       }
   });
 
+
+    
 
 });
